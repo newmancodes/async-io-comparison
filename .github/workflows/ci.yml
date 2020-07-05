@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set environment variable
+      run: export DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS=1
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
