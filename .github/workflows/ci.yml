@@ -22,54 +22,54 @@ jobs:
       run: dotnet restore
     - name: dotnet Build
       working-directory: ./c#-async-io
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore -r ubuntu-x64
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/net5.0
+      working-directory: ./c#-async-io/bin/Release/net5.0/ubuntu-x64
       env:
         DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
