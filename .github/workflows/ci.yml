@@ -22,66 +22,15 @@ jobs:
     - name: Install dependencies
       working-directory: ./c#-async-io
       run: dotnet restore
-    - name: Build
+    - name: dotnet Build
       working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Build
-      working-directory: ./c#-async-io
-      run: dotnet run --configuration Release --no-restore
-    - name: Rust Run
+      run: dotnet build --configuration Release --no-restore -r linux-x64
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/linux-x64
+      run: ./c#-async-io
+    - name: Rust Build
       working-directory: ./rust-async-io
-      run: cargo run --release --verbose
+      run: cargo build --release --verbose
     - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
-    - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
-    - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
-    - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
-    - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
-    - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
-    - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
-    - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
-    - name: Rust Run
-      working-directory: ./rust-async-io
-      run: cargo run --release --verbose
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
