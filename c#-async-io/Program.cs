@@ -6,17 +6,21 @@
     using System.Linq;
     using System.Net.Http;
     using System.Text.Json;
+    using System.Threading;
     using System.Threading.Tasks;
 
     public class Program
     {
         public static async Task Main(string[] args)
         {
+            int completionPortThreads;
+            ThreadPool.GetMinThreads(out _, out completionPortThreads);
+            ThreadPool.SetMinThreads(16, completionPortThreads);
             Console.WriteLine($"DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS:{Environment.GetEnvironmentVariable("DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS")}");
             using var client = new HttpClient();
             var now = Stopwatch.StartNew();
             ICollection<ValueTask<JsonDocument>> gets = new List<ValueTask<JsonDocument>>();
-            for (var id = 1; id <= 100; id++)
+            for (var id = 1; id <= 200; id++)
             {
                 var get = GetTodo(client, id);
                 gets.Add(get);
