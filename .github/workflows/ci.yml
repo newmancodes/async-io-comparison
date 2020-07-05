@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set environment variable
-      run: export DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS=1
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
@@ -27,10 +25,84 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: dotnet Run
       working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
+      run: ./c#-async-io
+    - name: dotnet Run
+      working-directory: ./c#-async-io/bin/Release/net5.0
+      env:
+        DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS: 1
       run: ./c#-async-io
     - name: Rust Build
       working-directory: ./rust-async-io
       run: cargo build --release --verbose
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
+    - name: Rust Run
+      working-directory: ./rust-async-io/target/release
+      run: ./rust-async-io
     - name: Rust Run
       working-directory: ./rust-async-io/target/release
       run: ./rust-async-io
