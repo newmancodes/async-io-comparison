@@ -17,6 +17,16 @@ Result: {
   "completed": false
 }
 
+5.0.100-preview.6.20318.15
+
+Elapsed: 0.7919146 seconds
+Result: {
+  "userId": 5,
+  "id": 100,
+  "title": "excepturi a et neque qui expedita vel voluptate",
+  "completed": false
+}
+
 ## Rust - cargo run --release
 
 stable-x86_64-apple-darwin, rustc 1.44.1
