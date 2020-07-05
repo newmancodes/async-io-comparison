@@ -24,9 +24,9 @@ jobs:
       run: dotnet restore
     - name: dotnet Build
       working-directory: ./c#-async-io
-      run: dotnet build --configuration Release --no-restore -r linux-x64
+      run: dotnet build --configuration Release --no-restore
     - name: dotnet Run
-      working-directory: ./c#-async-io/bin/Release/linux-x64
+      working-directory: ./c#-async-io/bin/Release
       run: ./c#-async-io
     - name: Rust Build
       working-directory: ./rust-async-io
