@@ -6,27 +6,38 @@
     using System.Linq;
     using System.Net.Http;
     using System.Text.Json;
+    using System.Threading;
     using System.Threading.Tasks;
 
     public class Program
     {
         public static async Task Main(string[] args)
         {
+            int completionPortThreads;
+            ThreadPool.GetMinThreads(out _, out completionPortThreads);
+            ThreadPool.SetMinThreads(16, completionPortThreads);
+            Console.WriteLine($"DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS:{Environment.GetEnvironmentVariable("DOTNET_SYSTEM_THREADING_POOLASYNCVALUETASKS")}");
             using var client = new HttpClient();
             var now = Stopwatch.StartNew();
-            ICollection<Task<JsonDocument>> gets = new List<Task<JsonDocument>>();
-            for (var id = 1; id <= 100; id++)
+            ICollection<ValueTask<JsonDocument>> gets = new List<ValueTask<JsonDocument>>();
+            for (var id = 1; id <= 200; id++)
             {
                 var get = GetTodo(client, id);
                 gets.Add(get);
             }
-            await Task.WhenAll(gets);
+
+            JsonDocument result = null;
+            foreach (var get in gets)
+            {
+                result = await get;
+            }
+
             now.Stop();
             Console.WriteLine($"Elapsed: {now.Elapsed.TotalSeconds} seconds");
-            Console.WriteLine($"Result: {(await gets.Last()).RootElement.ToString()}");
+            Console.WriteLine($"Result: {result.RootElement.ToString()}");
         }
 
-        private static async Task<JsonDocument> GetTodo(HttpClient client, int id)
+        private static async ValueTask<JsonDocument> GetTodo(HttpClient client, int id)
         {
             const string Base = "https://jsonplaceholder.typicode.com/todos";
             var address = $"{Base}/{id}";

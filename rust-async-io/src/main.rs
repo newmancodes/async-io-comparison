@@ -8,7 +8,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let client = Client::builder().build()?;
     let now = Instant::now();
     let mut gets = Vec::new();
-    for id in 1..=100 {
+    for id in 1..=200 {
         let get = get_todo(&client, id);
         gets.push(get);
     }
