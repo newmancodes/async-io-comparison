@@ -17,6 +17,10 @@ Result: {
   "completed": false
 }
 
+## Go - go build, ./go-async-io
+
+go version go1.14.3 darwin/amd64
+
 ## Rust - cargo run --release
 
 stable-x86_64-apple-darwin, rustc 1.44.1
