@@ -12,7 +12,7 @@
     {
         public static async Task Main(string[] args)
         {
-            var client = new HttpClient();
+            using var client = new HttpClient();
             var now = Stopwatch.StartNew();
             ICollection<Task<JsonDocument>> gets = new List<Task<JsonDocument>>();
             for (var id = 1; id <= 100; id++)

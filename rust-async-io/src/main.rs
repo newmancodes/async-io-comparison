@@ -21,6 +21,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 async fn get_todo(client: &Client, id: i32) -> Result<Value, Box<dyn Error>> {
     let base = "https://jsonplaceholder.typicode.com/todos";
     let address = format!("{}/{}", base, id);
-    let result = client.get(&address).send().await?.json().await?;
-    Ok(result)
+    let response = client.get(&address).send().await?;
+    Ok(response.json().await?)
 }
